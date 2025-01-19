@@ -22,7 +22,9 @@ export class NavbarComponent implements AfterViewInit, OnDestroy {
   @Input() set categorySelected(value: number) {
     this.updateNavigationData(value);
   }
-  private navItemsSubject = new BehaviorSubject<INavItem[]>(navigationData[0]); // Default to Cars
+  private navItemsSubject = new BehaviorSubject<INavItem[]>(
+    navigationData[0].data
+  ); // Default to Cars
   navItems$: Observable<INavItem[]> = this.navItemsSubject.asObservable();
 
   selectedCategoryIndex: number = 0;
@@ -47,7 +49,7 @@ export class NavbarComponent implements AfterViewInit, OnDestroy {
   }
 
   private updateNavigationData(index: number) {
-    this.navItemsSubject.next(navigationData[index] || []);
+    this.navItemsSubject.next(navigationData[index].data || []);
   }
 
   ngOnDestroy(): void {

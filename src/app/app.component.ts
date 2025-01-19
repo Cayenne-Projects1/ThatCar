@@ -2,6 +2,8 @@ import { Component, EventEmitter, Inject, Output } from '@angular/core';
 import { ACTIVE_THEME, THEMES } from '../theme/symbols';
 import { darkTheme, lightTheme, ThemeService } from '../theme';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { INavigationData, navigationData } from './navbar/navigationData';
 
 @Component({
   selector: 'app-root',
@@ -12,11 +14,15 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class AppComponent {
   title = 'thatCar';
-  private categorySelectedSubject = new BehaviorSubject<number>(0); // Default to Cars
+  navigationData = navigationData;
+  private categorySelectedSubject = new BehaviorSubject<number>(0);
   categorySelected$: Observable<number> =
     this.categorySelectedSubject.asObservable();
 
-  changeNavigationData(index: number) {
-    this.categorySelectedSubject.next(index);
+  constructor(private router: Router) {}
+
+  changeNavigationData(data: INavigationData) {
+    this.router.navigateByUrl(data.path);
+    this.categorySelectedSubject.next(navigationData.indexOf(data));
   }
 }

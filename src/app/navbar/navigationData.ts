@@ -33,6 +33,12 @@ const navItemsCar: INavItem[] = [
   { name: 'Tools & Services', path: '/tools-services' },
 ];
 
+export interface INavigationData {
+  name: string;
+  path: string;
+  data: INavItem[];
+}
+
 const navItemsBike: INavItem[] = [
   {
     name: 'Buy Bike',
@@ -57,44 +63,44 @@ const navItemsBike: INavItem[] = [
   { name: 'Tools & Services', path: '/bike/tools-services' },
 ];
 
-const navItemsLeisure: INavItem[] = [
+const navItemsBoat: INavItem[] = [
   {
-    name: 'Buy Leisure',
+    name: 'Buy Boats',
     options: [
-      { name: 'New & Used Leisure For Sale', path: '/Leisure/new' },
-      { name: 'Find a Dealer', path: '/Leisure/dealer' },
-      { name: 'New Leisure Specials', path: '/Leisure/newSpecial' },
-      { name: 'Used Leisure Specials', path: '/Leisure/usedSpecial' },
+      { name: 'New & Used boats For Sale', path: '/boats/new' },
+      { name: 'Find a Dealer', path: '/boats/dealer' },
+      { name: 'New boats Specials', path: '/boats/newSpecial' },
+      { name: 'Used boats Specials', path: '/boats/usedSpecial' },
     ],
   },
   {
-    name: 'Sell Leisure',
-    path: '/sell-my-Leisure',
+    name: 'Sell Boats',
+    path: '/sell-my-boats',
   },
   { name: 'Tools & Services', path: '/tools-services' },
 ];
 
-const navItemsCommercial: INavItem[] = [
+const navItemsTrucks: INavItem[] = [
   {
-    name: 'Commercials',
+    name: 'Buy Trucks',
     options: [
-      { name: 'New & Used Leisure For Sale', path: '/Commercials/new' },
-      { name: 'Find a Dealer', path: '/Commercials/dealer' },
-      { name: 'New Leisure Specials', path: '/Commercials/newSpecial' },
-      { name: 'Used Leisure Specials', path: '/Commercials/usedSpecial' },
+      { name: 'New & Used Leisure For Sale', path: '/trucks/new' },
+      { name: 'Find a Dealer', path: '/trucks/dealer' },
+      { name: 'New Leisure Specials', path: '/trucks/newSpecial' },
+      { name: 'Used Leisure Specials', path: '/trucks/usedSpecial' },
     ],
   },
   {
-    name: 'Sell Commercials',
-    path: '/sell-my-Commercials',
+    name: 'Sell Trucks',
+    path: '/sell-my-trucks',
   },
   { name: 'News & Reviews', path: '/news-reviews' },
   { name: 'Tools & Services', path: '/tools-services' },
 ];
 
-export const navigationData = [
-  navItemsCar,
-  navItemsBike,
-  navItemsLeisure,
-  navItemsCommercial,
+export const navigationData: INavigationData[] = [
+  { name: 'Cars', path: 'cars', data: navItemsCar },
+  { name: 'Bikes', path: 'bikes', data: navItemsBike },
+  { name: 'Boats', path: 'boats', data: navItemsBoat },
+  { name: 'Trucks', path: 'trucks', data: navItemsTrucks },
 ];

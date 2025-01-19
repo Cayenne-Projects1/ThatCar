@@ -19,11 +19,9 @@ const routes: Routes = [
   },
 
   {
-    path: 'commercials',
+    path: 'trucks',
     loadChildren: () =>
-      import('./components/commercials/commercials.module').then(
-        (x) => x.CommercialsModule
-      ),
+      import('./components/trucks/trucks.module').then((x) => x.TrucksModule),
   },
 
   { path: '', redirectTo: '/cars', pathMatch: 'full', title: 'Cars' },

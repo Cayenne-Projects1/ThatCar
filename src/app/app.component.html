@@ -2,11 +2,10 @@
 <div class="container" theme>
   <app-navbar [categorySelected]="categorySelected ?? 0"></app-navbar>
 
-  <div>
-    <button mat-button (click)="changeNavigationData(0)">Cars</button>
-    <button mat-button (click)="changeNavigationData(1)">Bikes</button>
-    <button mat-button (click)="changeNavigationData(2)">Leisure</button>
-    <button mat-button (click)="changeNavigationData(3)">Commercial</button>
+  <div *ngFor="let data of navigationData">
+    <button mat-button (click)="changeNavigationData(data)">
+      {{ data.name }}
+    </button>
   </div>
   <router-outlet></router-outlet>
 </div>

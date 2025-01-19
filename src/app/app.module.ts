@@ -16,7 +16,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { darkTheme, lightTheme } from '../theme';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ThemeModule } from '../theme/theme.module';
-import { CarsModule } from './components/cars/cars.module';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent],
