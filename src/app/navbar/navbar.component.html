@@ -4,43 +4,33 @@
   </div>
   <span class="spacer"></span>
   <div>
-    <!-- Buy Dropdown -->
-    <button mat-button [matMenuTriggerFor]="buyMenu">
-      Buy
-      <mat-icon>expand_more</mat-icon>
-    </button>
-    <mat-menu #buyMenu="matMenu">
-      <button mat-menu-item routerLink="/buy/Cars">Cars</button>
-      <button mat-menu-item routerLink="/buy/Bicycles   ">Bicycles</button>
-      <button mat-menu-item routerLink="/buy/Motorbikes">Motorbikes</button>
-      <button mat-menu-item routerLink="/buy/Motorbikes">
-        Commercial vehicles
+    <ng-container *ngFor="let item of navItems$ | async">
+      <!-- Dropdown button -->
+      <button
+        mat-button
+        *ngIf="item.options"
+        [matMenuTriggerFor]="menuMap[item.name]"
+      >
+        {{ item.name }}
+        <mat-icon>expand_more</mat-icon>
       </button>
-      <button mat-menu-item routerLink="/buy/Motorbikes">
-        Leisure vehicles
+
+      <!-- Single navigation button -->
+      <button mat-button *ngIf="!item.options" [routerLink]="item.path">
+        {{ item.name }}
       </button>
-      <button mat-menu-item routerLink="/buy/Parts">Parts</button>
-    </mat-menu>
 
-    <!-- Sell Dropdown -->
-    <button mat-button [matMenuTriggerFor]="sellMenu">
-      Sell
-      <mat-icon>expand_more</mat-icon>
-    </button>
-    <mat-menu #sellMenu="matMenu">
-      <button mat-menu-item routerLink="/sell/Valuation">Get Valuation</button>
-    </mat-menu>
-
-    <button mat-button [matMenuTriggerFor]="dealerCornerMenu">
-      Dealer Corners
-      <mat-icon>expand_more</mat-icon>
-    </button>
-    <mat-menu #dealerCornerMenu="matMenu">
-      <button mat-menu-item routerLink="/sell/Dealer">Dealer</button>
-    </mat-menu>
-
-    <!-- Other Links -->
-    <button mat-button routerLink="/services">News & Reviews</button>
+      <!-- Dropdown menu -->
+      <mat-menu #menu="matMenu" [id]="item.name" *ngIf="item.options">
+        <button
+          mat-menu-item
+          *ngFor="let option of item.options"
+          [routerLink]="option.path"
+        >
+          {{ option.name }}
+        </button>
+      </mat-menu>
+    </ng-container>
   </div>
   <mat-icon>person</mat-icon>
 </mat-toolbar>

@@ -1,3 +1,12 @@
+@let categorySelected = categorySelected$ | async;
 <div class="container" theme>
-  <app-navbar></app-navbar> <router-outlet></router-outlet>
+  <app-navbar [categorySelected]="categorySelected ?? 0"></app-navbar>
+
+  <div>
+    <button mat-button (click)="changeNavigationData(0)">Cars</button>
+    <button mat-button (click)="changeNavigationData(1)">Bikes</button>
+    <button mat-button (click)="changeNavigationData(2)">Leisure</button>
+    <button mat-button (click)="changeNavigationData(3)">Commercial</button>
+  </div>
+  <router-outlet></router-outlet>
 </div>
