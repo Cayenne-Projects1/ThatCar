@@ -1,0 +1,16 @@
+.light-theme {
+  --primary-color: red;
+  --secondary-color: black;
+  --background-color: white;
+}
+
+.dark-theme {
+  --primary-color: white;
+  --secondary-color: gray;
+  --background-color: black;
+}
+
+body {
+  color: var(--primary-color);
+  background-color: var(--background-color);
+}

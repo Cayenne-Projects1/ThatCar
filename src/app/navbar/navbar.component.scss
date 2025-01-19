@@ -1,0 +1,40 @@
+.mat-menu-panel {
+  background-color: white;
+  color: black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.mat-menu-item {
+  font-weight: 500;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease;
+}
+
+.mat-menu-item:hover {
+  background-color: #e3f2fd; /* Light blue shade */
+}
+
+.navbar-logo img {
+  height: 40px;
+  cursor: pointer;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+button[mat-button] {
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+@media (max-width: 768px) {
+  mat-toolbar {
+    flex-wrap: wrap;
+  }
+
+  button[mat-button] {
+    width: 100%;
+    text-align: left;
+  }
+}

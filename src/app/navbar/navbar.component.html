@@ -1,0 +1,45 @@
+<mat-toolbar color="primary" class="navbar">
+  <div class="navbar-logo">
+    <img src="/logo.png" alt="My App Logo" />
+  </div>
+  <span class="spacer"></span>
+  <div>
+    <!-- Buy Dropdown -->
+    <button mat-button [matMenuTriggerFor]="buyMenu">
+      Buy
+      <mat-icon>expand_more</mat-icon>
+    </button>
+    <mat-menu #buyMenu="matMenu">
+      <button mat-menu-item routerLink="/buy/Cars">Cars</button>
+      <button mat-menu-item routerLink="/buy/Bicycles   ">Bicycles</button>
+      <button mat-menu-item routerLink="/buy/Motorbikes">Motorbikes</button>
+      <button mat-menu-item routerLink="/buy/Motorbikes">
+        Commercial vehicles
+      </button>
+      <button mat-menu-item routerLink="/buy/Motorbikes">
+        Leisure vehicles
+      </button>
+      <button mat-menu-item routerLink="/buy/Parts">Parts</button>
+    </mat-menu>
+
+    <!-- Sell Dropdown -->
+    <button mat-button [matMenuTriggerFor]="sellMenu">
+      Sell
+      <mat-icon>expand_more</mat-icon>
+    </button>
+    <mat-menu #sellMenu="matMenu">
+      <button mat-menu-item routerLink="/sell/Valuation">Get Valuation</button>
+    </mat-menu>
+
+    <button mat-button [matMenuTriggerFor]="dealerCornerMenu">
+      Dealer Corners
+      <mat-icon>expand_more</mat-icon>
+    </button>
+    <mat-menu #dealerCornerMenu="matMenu">
+      <button mat-menu-item routerLink="/sell/Dealer">Dealer</button>
+    </mat-menu>
+
+    <!-- Other Links -->
+    <button mat-button routerLink="/services">News & Reviews</button>
+  </div>
+</mat-toolbar>
