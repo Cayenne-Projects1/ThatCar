@@ -13,6 +13,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import { darkTheme, lightTheme } from '../theme';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ThemeModule } from '../theme/theme.module';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent],
@@ -25,6 +28,12 @@ import { MatIconModule } from '@angular/material/icon';
     MatIconModule,
   ],
   providers: [
+    BrowserModule,
+    ThemeModule.forRoot({
+      themes: [lightTheme, darkTheme],
+      active: 'dark',
+    }),
+    BrowserAnimationsModule,
     provideClientHydration(withEventReplay()),
     provideAnimationsAsync(),
   ],
