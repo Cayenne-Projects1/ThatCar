@@ -1,11 +1,90 @@
 @let categorySelected = categorySelected$ | async;
-<div class="container" theme>
-  <app-navbar [categorySelected]="categorySelected ?? 0"></app-navbar>
 
-  <div *ngFor="let data of navigationData">
-    <button mat-button (click)="changeNavigationData(data)">
-      {{ data.name }}
-    </button>
+<div class="container" theme>
+  <app-navbar [categorySelected]="categorySelected?.index ?? 0"></app-navbar>
+
+  <div class="background-container">
+    <div class="form-overlay">
+      <div style="display: inline-flex" *ngFor="let data of navigationData">
+        <button mat-button (click)="changeNavigationData(data)">
+          {{ data.name }}
+        </button>
+      </div>
+      <form [formGroup]="searchForm" (ngSubmit)="onSearch()">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Search Make, Model and Variant</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="e.g., Toyota Corolla"
+            formControlName="searchQuery"
+          />
+        </mat-form-field>
+
+        <mat-radio-group formControlName="searchBy" class="radio-group">
+          <mat-radio-button value="price">Price</mat-radio-button>
+          <mat-radio-button value="monthlyRepayment"
+            >Monthly Repayment</mat-radio-button
+          >
+        </mat-radio-group>
+
+        <div class="filters">
+          <!-- Min Price with left icon -->
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-icon matPrefix>attach_money</mat-icon>
+            <mat-label>Min Price</mat-label>
+            <mat-select formControlName="minPrice">
+              <mat-option *ngFor="let price of priceOptions" [value]="price">
+                {{ price }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <!-- Max Price with left icon -->
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-icon matPrefix>attach_money</mat-icon>
+            <mat-label>Max Price</mat-label>
+            <mat-select formControlName="maxPrice">
+              <mat-option *ngFor="let price of priceOptions" [value]="price">
+                {{ price }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <!-- Location with left icon -->
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-icon matPrefix>place</mat-icon>
+            <mat-label>Location</mat-label>
+            <mat-select formControlName="location">
+              <mat-option *ngFor="let loc of locationOptions" [value]="loc">
+                {{ loc }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <!-- Body Type with left icon -->
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-icon matPrefix>directions_car</mat-icon>
+            <mat-label>Body Type</mat-label>
+            <mat-select formControlName="bodyType">
+              <mat-option *ngFor="let body of bodyTypeOptions" [value]="body">
+                {{ body }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <button
+          mat-raised-button
+          color="primary"
+          class="full-width"
+          type="submit"
+        >
+          Search
+        </button>
+      </form>
+    </div>
   </div>
+  <app-footer></app-footer>
   <router-outlet></router-outlet>
 </div>
