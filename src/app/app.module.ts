@@ -23,6 +23,7 @@ import { ThemeModule } from '../theme/theme.module';
 import { FooterComponent } from './footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FilterSectionFormModule } from './filter-section-form/filter-section-form.module';
+import { AvailableCarsModule } from './available-cars/available-cars.module';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, FooterComponent],
@@ -40,6 +41,7 @@ import { FilterSectionFormModule } from './filter-section-form/filter-section-fo
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FilterSectionFormModule,
+    AvailableCarsModule,
   ],
   providers: [
     BrowserModule,

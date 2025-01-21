@@ -1,0 +1,18 @@
+<div class="results">
+  <h3>Available Cars</h3>
+  <mat-card *ngFor="let car of cars" class="car-card">
+    <mat-card-header>
+      <mat-card-title>{{ car.make }} {{ car.model }}</mat-card-title>
+      <mat-card-subtitle>${{ car.price }}</mat-card-subtitle>
+    </mat-card-header>
+    <img
+      mat-card-image
+      [src]="car.imageUrl"
+      alt="{{ car.make }} {{ car.model }}"
+    />
+    <mat-card-content>
+      <p>Location: {{ car.location }}</p>
+      <p>Body Type: {{ car.bodyType }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
