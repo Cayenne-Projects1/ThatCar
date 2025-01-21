@@ -18,32 +18,8 @@ export class AppComponent {
   title = 'thatCar';
   navigationData = navigationData;
 
-  @Input() priceOptions: number[] = [10000, 20000, 30000, 40000, 50000];
-  @Input() locationOptions: string[] = ['Johannesburg', 'Cape Town', 'Durban'];
-  @Input() bodyTypeOptions: string[] = ['Sedan', 'SUV', 'Hatchback'];
-  @Output() search = new EventEmitter<any>();
-
-  searchForm: FormGroup = new FormGroup({});
-
-  ngOnInit(): void {
-    this.searchForm = this.fb.group({
-      searchQuery: [''],
-      searchBy: ['price'],
-      minPrice: [''],
-      maxPrice: [''],
-      location: [''],
-      bodyType: [''],
-    });
-  }
-
-  onSearch(): void {
-    this.search.emit(this.searchForm.value);
-  }
   categorySelected$: Observable<INavigationData>;
-  constructor(
-    private readonly navBarDataService: NavBarDataService,
-    private fb: FormBuilder
-  ) {
+  constructor(private readonly navBarDataService: NavBarDataService) {
     this.categorySelected$ = this.navBarDataService.categorySelected$;
   }
 

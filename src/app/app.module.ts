@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ThemeModule } from '../theme/theme.module';
 import { FooterComponent } from './footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FilterSectionFormModule } from './filter-section-form/filter-section-form.module';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, FooterComponent],
@@ -38,6 +39,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    FilterSectionFormModule,
   ],
   providers: [
     BrowserModule,
