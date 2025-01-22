@@ -15,7 +15,6 @@ import { MatButtonModule } from '@angular/material/button';
   declarations: [AvailableCarsComponent],
   imports: [
     CommonModule,
-    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     MatCardModule, // Import MatCardModule

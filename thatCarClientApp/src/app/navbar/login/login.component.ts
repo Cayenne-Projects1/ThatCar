@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { APIResponse } from '../../API';
 
 @Component({
   selector: 'app-login',
@@ -28,7 +29,7 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       const loginData = this.loginForm.value;
       this.http
-        .post('https://localhost:7099/api/User/login', loginData)
+        .post<APIResponse>('https://localhost:7099/api/User/login', loginData)
         .subscribe({
           next: (response) => {
             console.log('Login successful:', response);

@@ -50,7 +50,6 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FilterSectionFormModule,
-    AvailableCarsModule,
     HttpClientModule,
   ],
   providers: [
