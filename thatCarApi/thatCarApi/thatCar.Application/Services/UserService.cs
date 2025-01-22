@@ -27,7 +27,7 @@ namespace thatCar.Application.Services
       {
         var data = await _mongoRepositoryUser.FindOneAsync(x => x.Username == user.Username);
 
-        if (data is not null)
+        if (data == null)
         {
           PasswordHasher.CreatePasswordHash(user.Password, out var passwordHash, out var passwordSalt);
 
@@ -72,7 +72,7 @@ namespace thatCar.Application.Services
       {
         var data = await _mongoRepositoryUser.FindOneAsync(x => x.AccountId == id);
 
-        if (data is not null)
+        if (data != null)
         {
           await _mongoRepositoryUser.DeleteOneAsync(x => x.AccountId == id);
 
@@ -151,7 +151,7 @@ namespace thatCar.Application.Services
       {
         var data = await _mongoRepositoryUser.FindOneAsync(x => x.Username == user.Username);
 
-        if (data is not null && PasswordHasher.VerifyPasswordHash(user.Password, data.PasswordHash, data.PasswordSalt))
+        if (data != null && PasswordHasher.VerifyPasswordHash(user.Password, data.PasswordHash, data.PasswordSalt))
         {
           var jwtDetails = JwtHelper.BuildJwt(Guid.Parse(data.AccountId));
           response.IsSuccessful = true;
@@ -181,7 +181,7 @@ namespace thatCar.Application.Services
       {
         var data = await _mongoRepositoryUser.FindOneAsync(x => x.Username == user.Username);
 
-        if (data is not null)
+        if (data != null)
         {
           PasswordHasher.CreatePasswordHash(user.Password, out var passwordHash, out var passwordSalt);
 
