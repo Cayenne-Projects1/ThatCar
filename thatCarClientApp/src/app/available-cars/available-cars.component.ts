@@ -15,7 +15,7 @@ export class AvailableCarsComponent {
       price: 20000,
       bodyType: 'Sedan',
       location: 'Lagos',
-      imageUrl: '',
+      imageUrl: '/showcar7.jpg',
     },
     {
       make: 'Honda',
@@ -23,7 +23,7 @@ export class AvailableCarsComponent {
       price: 22000,
       bodyType: 'Sedan',
       location: 'Abuja',
-      imageUrl: '',
+      imageUrl: '/showcar7.jpg',
     },
     {
       make: 'Ford',
@@ -31,7 +31,7 @@ export class AvailableCarsComponent {
       price: 35000,
       bodyType: 'SUV',
       location: 'Lagos',
-      imageUrl: '',
+      imageUrl: '/showcar7.jpg',
     },
     {
       make: 'BMW',
@@ -39,7 +39,7 @@ export class AvailableCarsComponent {
       price: 50000,
       bodyType: 'SUV',
       location: 'Port Harcourt',
-      imageUrl: '',
+      imageUrl: '/showcar7.jpg',
     },
     {
       make: 'Mercedes',
@@ -47,7 +47,7 @@ export class AvailableCarsComponent {
       price: 30000,
       bodyType: 'Hatchback',
       location: 'Lagos',
-      imageUrl: '',
+      imageUrl: '/showcar7.jpg',
     },
   ];
 }

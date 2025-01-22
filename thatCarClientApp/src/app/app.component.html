@@ -2,12 +2,6 @@
 
 <div class="container" theme>
   <app-navbar [categorySelected]="categorySelected?.index ?? 0"></app-navbar>
-
-  <div style="display: inline-flex" *ngFor="let data of navigationData">
-    <button mat-button (click)="changeNavigationData(data)">
-      {{ data.name }}
-    </button>
-  </div>
   <app-filter-section-form></app-filter-section-form>
   <app-available-cars></app-available-cars>
   <app-footer></app-footer>

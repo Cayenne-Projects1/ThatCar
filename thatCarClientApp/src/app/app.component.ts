@@ -16,14 +16,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class AppComponent {
   title = 'thatCar';
-  navigationData = navigationData;
 
   categorySelected$: Observable<INavigationData>;
   constructor(private readonly navBarDataService: NavBarDataService) {
     this.categorySelected$ = this.navBarDataService.categorySelected$;
-  }
-
-  changeNavigationData(data: INavigationData) {
-    this.navBarDataService.setNavBarDataService(data);
   }
 }

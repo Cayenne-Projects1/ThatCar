@@ -11,6 +11,8 @@ import {
 import { MatMenu } from '@angular/material/menu';
 import { INavItem, navigationData } from './navigationData';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { LoginComponent } from './login/login.component';
 
 @Component({
   selector: 'app-navbar',
@@ -34,7 +36,7 @@ export class NavbarComponent implements AfterViewInit, OnDestroy {
 
   menuMap: { [key: string]: MatMenu | null } = {};
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private cdr: ChangeDetectorRef, private dialog: MatDialog) {}
 
   ngAfterViewInit() {
     // Map each menu by its data-name attribute
@@ -50,6 +52,20 @@ export class NavbarComponent implements AfterViewInit, OnDestroy {
 
   private updateNavigationData(index: number) {
     this.navItemsSubject.next(navigationData[index].data || []);
+  }
+
+  openLoginDialog(event: MouseEvent) {
+    const dialogConfig = new MatDialogConfig();
+
+    // Position the dialog near the icon
+    dialogConfig.position = {
+      top: `${event.clientY}px`,
+      left: `${event.clientX - 150}px`, // Adjust X offset to center the dialog
+    };
+
+    dialogConfig.width = '300px'; // Adjust the size for compactness
+
+    this.dialog.open(LoginComponent, dialogConfig);
   }
 
   ngOnDestroy(): void {

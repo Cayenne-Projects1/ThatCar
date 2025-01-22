@@ -1,0 +1,38 @@
+.full-width {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+mat-form-field {
+  font-size: 14px;
+}
+
+mat-dialog-title {
+  font-weight: bold;
+  text-align: center;
+}
+
+mat-dialog-actions {
+  padding-top: 16px;
+}
+
+button {
+  min-width: 80px;
+}
+
+mat-flat-button {
+  color: white;
+}
+
+::ng-deep
+  .mat-form-field-appearance-outline.mat-focused
+  .mat-form-field-outline {
+  color: #ba1a1a;
+  border-color: #ba1a1a;
+}
+
+::ng-deep
+  .mat-form-field-appearance-outline.mat-focused
+  .mat-form-field-outline-thick {
+  border-color: #ba1a1a;
+}

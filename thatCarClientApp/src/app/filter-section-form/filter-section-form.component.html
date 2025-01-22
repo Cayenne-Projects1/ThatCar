@@ -1,5 +1,13 @@
 <div class="background-container">
   <div class="form-overlay">
+    <div
+      style="display: inline-flex; margin-bottom: 10px"
+      *ngFor="let data of navigationData"
+    >
+      <button mat-button (click)="changeNavigationData(data)">
+        {{ data.name }}
+      </button>
+    </div>
     <form [formGroup]="searchForm" (ngSubmit)="onSearch()">
       <mat-form-field appearance="fill" class="full-width">
         <mat-label>Search Make, Model and Variant</mat-label>

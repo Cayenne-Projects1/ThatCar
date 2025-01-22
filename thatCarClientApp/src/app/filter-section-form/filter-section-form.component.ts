@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { NavBarDataService } from '../navbar/nav-bar-data.service';
+import { INavigationData, navigationData } from '../navbar/navigationData';
 
 @Component({
   selector: 'app-filter-section-form',
@@ -15,8 +17,11 @@ export class FilterSectionFormComponent implements OnInit {
   @Output() search = new EventEmitter<any>();
 
   searchForm: FormGroup = new FormGroup({});
-
-  constructor(private fb: FormBuilder) {}
+  navigationData = navigationData;
+  constructor(
+    private fb: FormBuilder,
+    private readonly navBarDataService: NavBarDataService
+  ) {}
   ngOnInit(): void {
     this.searchForm = this.fb.group({
       searchQuery: [''],
@@ -26,6 +31,10 @@ export class FilterSectionFormComponent implements OnInit {
       location: [''],
       bodyType: [''],
     });
+  }
+
+  changeNavigationData(data: INavigationData) {
+    this.navBarDataService.setNavBarDataService(data);
   }
 
   onSearch(): void {
