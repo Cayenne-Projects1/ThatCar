@@ -35,6 +35,7 @@ const navItemsCar: INavItem[] = [
 
 export interface INavigationData {
   name: string;
+  listingPath: string;
   path: string;
   index: number;
   data: INavItem[];
@@ -100,8 +101,32 @@ const navItemsTrucks: INavItem[] = [
 ];
 
 export const navigationData: INavigationData[] = [
-  { index: 0, name: 'Cars', path: 'cars', data: navItemsCar },
-  { index: 1, name: 'Bikes', path: 'bikes', data: navItemsBike },
-  { index: 2, name: 'Boats', path: 'boats', data: navItemsBoat },
-  { index: 3, name: 'Trucks', path: 'trucks', data: navItemsTrucks },
+  {
+    index: 0,
+    name: 'Cars',
+    listingPath: '/cars/cars-list',
+    path: 'cars',
+    data: navItemsCar,
+  },
+  {
+    index: 1,
+    name: 'Bikes',
+    listingPath: '/bikes/bikes-list',
+    path: 'bikes',
+    data: navItemsBike,
+  },
+  {
+    index: 2,
+    name: 'Boats',
+    listingPath: '/boats/boats-list',
+    path: 'boats',
+    data: navItemsBoat,
+  },
+  {
+    index: 3,
+    name: 'Trucks',
+    listingPath: '/trucks/trucks-list',
+    path: 'trucks',
+    data: navItemsTrucks,
+  },
 ];

@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { NavBarDataService } from '../navbar/nav-bar-data.service';
 import { INavigationData, navigationData } from '../navbar/navigationData';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-filter-section-form',
@@ -19,6 +20,7 @@ export class FilterSectionFormComponent implements OnInit {
   searchForm: FormGroup = new FormGroup({});
   navigationData = navigationData;
   constructor(
+    private router: Router,
     private fb: FormBuilder,
     private readonly navBarDataService: NavBarDataService
   ) {}
@@ -38,6 +40,12 @@ export class FilterSectionFormComponent implements OnInit {
   }
 
   onSearch(): void {
+    this.router.navigate(
+      [this.navBarDataService.categorySelected.listingPath],
+      {
+        queryParams: this.searchForm.value,
+      }
+    );
     this.search.emit(this.searchForm.value);
   }
 }

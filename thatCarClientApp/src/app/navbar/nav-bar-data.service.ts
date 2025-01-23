@@ -13,6 +13,10 @@ export class NavBarDataService {
   categorySelected$: Observable<INavigationData> =
     this.categorySelectedSubject.asObservable();
 
+  get categorySelected() {
+    return this.categorySelectedSubject.value;
+  }
+
   constructor(private router: Router) {}
 
   setNavBarDataService(navBarData: INavigationData) {
