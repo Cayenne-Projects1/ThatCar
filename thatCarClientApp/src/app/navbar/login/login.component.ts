@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { APIResponse } from '../../API';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -15,9 +16,9 @@ export class LoginComponent {
   loginForm!: FormGroup;
 
   constructor(
+    private authService: AuthService,
     private fb: FormBuilder,
-    private dialogRef: MatDialogRef<LoginComponent>,
-    private http: HttpClient
+    private dialogRef: MatDialogRef<LoginComponent>
   ) {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
@@ -28,17 +29,14 @@ export class LoginComponent {
   onLogin() {
     if (this.loginForm.valid) {
       const loginData = this.loginForm.value;
-      this.http
-        .post<APIResponse>('https://localhost:7099/api/User/login', loginData)
-        .subscribe({
-          next: (response) => {
-            console.log('Login successful:', response);
-            this.dialogRef.close(true);
-          },
-          error: (error) => {
-            console.error('Login failed:', error);
-          },
-        });
+      this.authService.login(loginData).subscribe({
+        next: () => {
+          this.dialogRef.close(true);
+        },
+        error: (error) => {
+          console.error('Login failed:', error);
+        },
+      });
     }
   }
 }

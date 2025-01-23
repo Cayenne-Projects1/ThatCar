@@ -13,6 +13,7 @@ import { INavItem, navigationData } from './navigationData';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { LoginComponent } from './login/login.component';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -33,10 +34,17 @@ export class NavbarComponent implements AfterViewInit, OnDestroy {
   private subscriptions: Subscription[] = [];
 
   @ViewChildren(MatMenu) menus!: QueryList<MatMenu>;
+  loggedUser$: Observable<any>;
 
   menuMap: { [key: string]: MatMenu | null } = {};
 
-  constructor(private cdr: ChangeDetectorRef, private dialog: MatDialog) {}
+  constructor(
+    private authService: AuthService,
+    private cdr: ChangeDetectorRef,
+    private dialog: MatDialog
+  ) {
+    this.loggedUser$ = this.authService.loggedUser$;
+  }
 
   ngAfterViewInit() {
     // Map each menu by its data-name attribute

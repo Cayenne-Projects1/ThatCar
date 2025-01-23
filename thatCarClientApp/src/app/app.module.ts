@@ -24,9 +24,9 @@ import { ThemeModule } from '../theme/theme.module';
 import { FooterComponent } from './footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FilterSectionFormModule } from './filter-section-form/filter-section-form.module';
-import { AvailableCarsModule } from './available-cars/available-cars.module';
 import { LoginComponent } from './navbar/login/login.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withFetch } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -36,6 +36,7 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     MatToolbarModule,
@@ -50,7 +51,6 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FilterSectionFormModule,
-    HttpClientModule,
   ],
   providers: [
     BrowserModule,
@@ -61,6 +61,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     provideClientHydration(withEventReplay()),
     provideAnimationsAsync(),
+    provideHttpClient(withFetch()),
   ],
   bootstrap: [AppComponent],
 })

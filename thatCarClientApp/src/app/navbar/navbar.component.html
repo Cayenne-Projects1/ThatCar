@@ -1,3 +1,4 @@
+@let loggedUser = (loggedUser$ | async);
 <mat-toolbar color="primary" class="navbar">
   <div class="navbar-logo">
     <img src="/logo4.png" alt="My App Logo" />
@@ -32,5 +33,12 @@
       </mat-menu>
     </ng-container>
   </div>
-  <mat-icon (click)="openLoginDialog($event)">person</mat-icon>
+
+  <mat-icon *ngIf="!loggedUser" (click)="openLoginDialog($event)"
+    >person
+  </mat-icon>
+  <div *ngIf="loggedUser">
+    <mat-icon>person </mat-icon>
+    <span>{{ loggedUser.name ? loggedUser.name : null }}</span>
+  </div>
 </mat-toolbar>
