@@ -12,6 +12,10 @@ builder.Services.AddSingleton<IMongoDbSettings>(sp => sp.GetRequiredService<IOpt
 
 builder.Services.AddScoped(typeof(IMongoRepository<>), typeof(MongoRepository<>));
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<ICarService, CarService>();
+builder.Services.AddScoped<IBikeService, BikeService>();
+builder.Services.AddScoped<IBoatService, BoatService>();
+builder.Services.AddScoped<ITruckService, TruckService>();
 
 
 builder.Services.AddControllers();
@@ -31,7 +35,7 @@ builder.Services.AddCors(options =>
       });
 });
 
-var dbConfigSection = builder.Configuration.GetSection("MongoDbSettings");
+var dbConfigSection = builder.Configuration.GetSection("DatabaseSettings");
 builder.Services.Configure<MongoDbSettings>(dbConfigSection);
 
 
