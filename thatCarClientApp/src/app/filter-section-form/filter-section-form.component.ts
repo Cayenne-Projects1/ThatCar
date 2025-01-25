@@ -13,8 +13,33 @@ import { Router } from '@angular/router';
 })
 export class FilterSectionFormComponent implements OnInit {
   @Input() priceOptions: number[] = [10000, 20000, 30000, 40000, 50000];
-  @Input() locationOptions: string[] = ['Johannesburg', 'Cape Town', 'Durban'];
-  @Input() bodyTypeOptions: string[] = ['Sedan', 'SUV', 'Hatchback'];
+  @Input() locationOptions: string[] = [
+    'Eastern Cape',
+    'Free State',
+    'Gauteng',
+    'KwaZulu-Natal',
+    'Limpopo',
+    'Mpumalanga',
+    'North West',
+    'Northern Cape',
+    'Western Cape',
+  ];
+  @Input() bodyTypeOptions: string[] = [
+    'Sedan',
+    'SUV',
+    'Hatchback',
+    'Coupe',
+    'Convertible',
+    'Pickup Truck',
+    'Van',
+    'Wagon',
+    'Sports Car',
+    'Crossover',
+    'Minivan',
+    'Jeep',
+    'Truck',
+    'Roadster',
+  ];
   @Output() search = new EventEmitter<any>();
 
   searchForm: FormGroup = new FormGroup({});
