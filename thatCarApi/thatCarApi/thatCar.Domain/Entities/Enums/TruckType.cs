@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace thatCar.Domain.Entities
+namespace thatCar.Domain.Entities.Enums
 {
     public enum TruckType
     {

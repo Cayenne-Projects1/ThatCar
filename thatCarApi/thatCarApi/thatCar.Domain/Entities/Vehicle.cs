@@ -16,9 +16,9 @@ namespace thatCar.Domain.Entities
         public decimal Price { get; set; }
         public string VIN { get; set; } 
         public string Color { get; set; }
-        public string EngineType { get; set; }
+        public EngineType EngineType { get; set; }
         public int Mileage { get; set; }
-        public string NewOrUsed { get; set; }
+        public bool NewOrUsed { get; set; }
         public FuelType FuelType { get; set; }
         public BodyType BodyType { get; set; }
     }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { testBikes } from '../../test_data';
+import { Bike } from '../../vehicle.model';
 
 @Component({
   selector: 'app-bikes-list',
@@ -10,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BikesListComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute) {}
+  bikes: Bike[] = testBikes;
 
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe((params) => {
