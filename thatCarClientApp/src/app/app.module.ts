@@ -27,6 +27,7 @@ import { FilterSectionFormModule } from './filter-section-form/filter-section-fo
 import { LoginComponent } from './navbar/login/login.component';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { WatchContentModule } from './watch-content/watch-content.module';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { CommonModule } from '@angular/common';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FilterSectionFormModule,
+    WatchContentModule,
   ],
   providers: [
     BrowserModule,

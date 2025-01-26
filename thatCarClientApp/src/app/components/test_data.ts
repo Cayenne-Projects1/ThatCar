@@ -9,6 +9,21 @@ import {
   Truck,
 } from './vehicle.model';
 
+function getRandomLocation() {
+  const locations = [
+    'Eastern Cape',
+    'Free State',
+    'Gauteng',
+    'KwaZulu-Natal',
+    'Limpopo',
+    'Mpumalanga',
+    'North West',
+    'Northern Cape',
+    'Western Cape',
+  ];
+  return locations[Math.floor(Math.random() * locations.length)];
+}
+
 export const testCars = [
   new Car(
     'Toyota',
@@ -24,7 +39,8 @@ export const testCars = [
     BodyType.Sedan,
     4,
     true,
-    Transmission.Automatic
+    Transmission.Automatic,
+    getRandomLocation()
   ),
   new Car(
     'Honda',
@@ -40,7 +56,8 @@ export const testCars = [
     BodyType.Sedan,
     4,
     false,
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Car(
     'Ford',
@@ -56,7 +73,8 @@ export const testCars = [
     BodyType.Coupe,
     2,
     true,
-    Transmission.SemiAutomatic
+    Transmission.SemiAutomatic,
+    getRandomLocation()
   ),
   new Car(
     'BMW',
@@ -72,7 +90,8 @@ export const testCars = [
     BodyType.SUV,
     4,
     false,
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Car(
     'Audi',
@@ -88,7 +107,8 @@ export const testCars = [
     BodyType.Sedan,
     4,
     true,
-    Transmission.Automatic
+    Transmission.Automatic,
+    getRandomLocation()
   ),
   new Car(
     'Mercedes',
@@ -104,7 +124,8 @@ export const testCars = [
     BodyType.Sedan,
     4,
     true,
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Car(
     'Chevrolet',
@@ -120,7 +141,8 @@ export const testCars = [
     BodyType.Sedan,
     4,
     false,
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Car(
     'Nissan',
@@ -136,7 +158,8 @@ export const testCars = [
     BodyType.Sedan,
     4,
     false,
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Car(
     'Mazda',
@@ -152,7 +175,8 @@ export const testCars = [
     BodyType.SUV,
     4,
     true,
-    Transmission.Automatic
+    Transmission.Automatic,
+    getRandomLocation()
   ),
   new Car(
     'Tesla',
@@ -168,7 +192,8 @@ export const testCars = [
     BodyType.Sedan,
     4,
     true,
-    Transmission.SemiAutomatic
+    Transmission.SemiAutomatic,
+    getRandomLocation()
   ),
 ];
 
@@ -187,7 +212,8 @@ export const testBoats = [
     BodyType.Hatchback,
     'Motorboat',
     24,
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Boat(
     'Sunseeker',
@@ -203,7 +229,8 @@ export const testBoats = [
     BodyType.Hatchback,
     'Yacht',
     50,
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Boat(
     'Beneteau',
@@ -219,7 +246,8 @@ export const testBoats = [
     BodyType.Hatchback,
     'Sailboat',
     38,
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Boat(
     'Sea Ray',
@@ -235,7 +263,8 @@ export const testBoats = [
     BodyType.Hatchback,
     'Motorboat',
     40,
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Boat(
     'Bayliner',
@@ -251,7 +280,8 @@ export const testBoats = [
     BodyType.Hatchback,
     'Motorboat',
     20,
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Boat(
     'Catalina',
@@ -267,7 +297,8 @@ export const testBoats = [
     BodyType.Hatchback,
     'Sailboat',
     30,
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Boat(
     'Chaparral',
@@ -283,7 +314,8 @@ export const testBoats = [
     BodyType.Hatchback,
     'Motorboat',
     30,
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Boat(
     'Regal',
@@ -299,7 +331,8 @@ export const testBoats = [
     BodyType.Hatchback,
     'Motorboat',
     26,
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Boat(
     'Hunter',
@@ -315,7 +348,8 @@ export const testBoats = [
     BodyType.Hatchback,
     'Sailboat',
     33,
-    Transmission.Automatic
+    Transmission.Automatic,
+    getRandomLocation()
   ),
   new Boat(
     'Cobalt',
@@ -331,7 +365,8 @@ export const testBoats = [
     BodyType.Hatchback,
     'Motorboat',
     23,
-    Transmission.Automatic
+    Transmission.Automatic,
+    getRandomLocation()
   ),
 ];
 
@@ -350,7 +385,8 @@ export const testBikes = [
     BodyType.Hatchback,
     false,
     'Cruiser',
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Bike(
     'Kawasaki',
@@ -366,7 +402,8 @@ export const testBikes = [
     BodyType.Hatchback,
     false,
     'Sport',
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Bike(
     'Yamaha',
@@ -382,7 +419,8 @@ export const testBikes = [
     BodyType.Hatchback,
     false,
     'Naked',
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Bike(
     'Ducati',
@@ -398,7 +436,8 @@ export const testBikes = [
     BodyType.Hatchback,
     false,
     'Sport',
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Bike(
     'Suzuki',
@@ -414,7 +453,8 @@ export const testBikes = [
     BodyType.Hatchback,
     false,
     'Sport',
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Bike(
     'BMW',
@@ -430,7 +470,8 @@ export const testBikes = [
     BodyType.Hatchback,
     true,
     'Touring',
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Bike(
     'Triumph',
@@ -446,7 +487,8 @@ export const testBikes = [
     BodyType.Hatchback,
     false,
     'Cruiser',
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Bike(
     'Indian',
@@ -462,7 +504,8 @@ export const testBikes = [
     BodyType.Hatchback,
     false,
     'Cruiser',
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Bike(
     'Honda',
@@ -478,7 +521,8 @@ export const testBikes = [
     BodyType.Hatchback,
     false,
     'Sport',
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Bike(
     'KTM',
@@ -494,7 +538,8 @@ export const testBikes = [
     BodyType.Hatchback,
     false,
     'Naked',
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
 ];
 
@@ -513,7 +558,8 @@ export const testTrucks = [
     BodyType.Pickup,
     'Pickup',
     5,
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Truck(
     'Volvo',
@@ -529,7 +575,8 @@ export const testTrucks = [
     BodyType.Pickup,
     'Lorry',
     20,
-    Transmission.Automatic
+    Transmission.Automatic,
+    getRandomLocation()
   ),
   new Truck(
     'Mercedes',
@@ -545,7 +592,8 @@ export const testTrucks = [
     BodyType.Pickup,
     'Dump Truck',
     10,
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Truck(
     'Mack',
@@ -561,7 +609,8 @@ export const testTrucks = [
     BodyType.Pickup,
     'Dump Truck',
     12,
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Truck(
     'Peterbilt',
@@ -577,7 +626,8 @@ export const testTrucks = [
     BodyType.Pickup,
     'Lorry',
     15,
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Truck(
     'Kenworth',
@@ -593,7 +643,8 @@ export const testTrucks = [
     BodyType.Pickup,
     'Lorry',
     18,
-    Transmission.Automatic
+    Transmission.Automatic,
+    getRandomLocation()
   ),
   new Truck(
     'Freightliner',
@@ -609,7 +660,8 @@ export const testTrucks = [
     BodyType.Pickup,
     'Dump Truck',
     14,
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Truck(
     'International',
@@ -625,7 +677,8 @@ export const testTrucks = [
     BodyType.Pickup,
     'Lorry',
     17,
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Truck(
     'Isuzu',
@@ -641,7 +694,8 @@ export const testTrucks = [
     BodyType.Pickup,
     'Delivery Truck',
     6,
-    Transmission.Manual
+    Transmission.Manual,
+    getRandomLocation()
   ),
   new Truck(
     'Hino',
@@ -657,6 +711,7 @@ export const testTrucks = [
     BodyType.Pickup,
     'Lorry',
     20,
-    Transmission.Automatic
+    Transmission.Automatic,
+    getRandomLocation()
   ),
 ];

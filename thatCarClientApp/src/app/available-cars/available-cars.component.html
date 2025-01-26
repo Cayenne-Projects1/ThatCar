@@ -1,8 +1,8 @@
+<h2 style="color: #dc2626">Pick Up Where You Left Off</h2>
 <div class="results">
-  <!-- <h3>Available Cars</h3> -->
   <mat-card *ngFor="let d of data" class="car-card">
     <mat-card-header>
-      <mat-card-title>{{ d.make }} {{ d.model }}</mat-card-title>
+      <mat-card-title>{{ d.year }} {{ d.make }} {{ d.model }}</mat-card-title>
       <mat-card-subtitle>R{{ d.price }}</mat-card-subtitle>
     </mat-card-header>
     <img mat-card-image [src]="d.imageUrl" alt="{{ d.make }} {{ d.model }}" />

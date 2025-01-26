@@ -8,10 +8,10 @@ const routes: Routes = [
     path: '',
     component: TrucksComponent,
   },
-  {
-    path: 'trucks-list/:params',
-    component: TrucksListComponent,
-  },
+  // {
+  //   path: 'trucks-list/:params',
+  //   component: TrucksListComponent,
+  // },
   {
     path: 'trucks-list',
     component: TrucksListComponent,

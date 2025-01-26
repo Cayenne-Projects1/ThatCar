@@ -16,6 +16,7 @@ export class CarsComponent {
       bodyType: 'Sedan',
       location: 'Lagos',
       imageUrl: '/showcar7.jpg',
+      year: 2019,
     },
     {
       make: 'Honda',
@@ -24,6 +25,7 @@ export class CarsComponent {
       bodyType: 'Sedan',
       location: 'Abuja',
       imageUrl: '/showcar7.jpg',
+      year: 2015,
     },
     {
       make: 'Ford',
@@ -32,22 +34,23 @@ export class CarsComponent {
       bodyType: 'SUV',
       location: 'Lagos',
       imageUrl: '/showcar7.jpg',
+      year: 2024,
     },
-    {
-      make: 'BMW',
-      model: 'X5',
-      price: 50000,
-      bodyType: 'SUV',
-      location: 'Port Harcourt',
-      imageUrl: '/showcar7.jpg',
-    },
-    {
-      make: 'Mercedes',
-      model: 'A-Class',
-      price: 30000,
-      bodyType: 'Hatchback',
-      location: 'Lagos',
-      imageUrl: '/showcar7.jpg',
-    },
+    // {
+    //   make: 'BMW',
+    //   model: 'X5',
+    //   price: 50000,
+    //   bodyType: 'SUV',
+    //   location: 'Port Harcourt',
+    //   imageUrl: '/showcar7.jpg',
+    // },
+    // {
+    //   make: 'Mercedes',
+    //   model: 'A-Class',
+    //   price: 30000,
+    //   bodyType: 'Hatchback',
+    //   location: 'Lagos',
+    //   imageUrl: '/showcar7.jpg',
+    // },
   ];
 }

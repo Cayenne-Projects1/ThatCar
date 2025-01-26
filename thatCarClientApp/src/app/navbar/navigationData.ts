@@ -11,23 +11,28 @@ export interface INavItem {
 
 const navItemsCar: INavItem[] = [
   {
-    name: 'Buy Car',
+    name: 'Buy',
     options: [
-      { name: 'New & Used Cars For Sale', path: '/car/new' },
-      { name: 'Find a Dealer', path: '/car/dealer' },
-      { name: 'New Car Specials', path: '/car/newSpecial' },
-      { name: 'Used Car Specials', path: '/car/usedSpecial' },
-      { name: 'Car Research', path: '/car/research' },
-      { name: 'Parts', path: '/car/parts' },
+      { name: 'Cars', path: '/cars' },
+      { name: 'Bicycle', path: '/bicycle' },
+      { name: 'Commercial Vehicles', path: '/commercial-vehicles' },
+      { name: 'Leisure Vehicles', path: '/leisure-vehicles' },
+      { name: 'Parts', path: '/parts' },
     ],
   },
   {
-    name: 'Sell Car',
+    name: 'Sell',
     path: '/sell-my-car',
+    options: [
+      { name: 'Cars', path: '/cars' },
+      { name: 'Bicycle', path: '/bicycle' },
+      { name: 'Commercial Vehicles', path: '/commercial-vehicles' },
+      { name: 'Leisure Vehicles', path: '/leisure-vehicles' },
+    ],
   },
   {
-    name: 'Value my Car',
-    path: '/value-car',
+    name: 'Dealers Corner',
+    path: '/dealers-corner',
   },
   { name: 'News & Reviews', path: '/news-reviews' },
   { name: 'Tools & Services', path: '/tools-services' },
@@ -39,6 +44,7 @@ export interface INavigationData {
   path: string;
   index: number;
   data: INavItem[];
+  icon?: string;
 }
 
 const navItemsBike: INavItem[] = [
@@ -104,6 +110,7 @@ export const navigationData: INavigationData[] = [
   {
     index: 0,
     name: 'Cars',
+    icon: 'directions_car',
     listingPath: '/cars/cars-list',
     path: 'cars',
     data: navItemsCar,
@@ -111,6 +118,15 @@ export const navigationData: INavigationData[] = [
   {
     index: 1,
     name: 'Bikes',
+    icon: 'pedal_bike',
+    listingPath: '/bikes/bikes-list',
+    path: 'bikes',
+    data: navItemsBike,
+  },
+  {
+    index: 1,
+    name: 'Bikes',
+    icon: 'two_wheeler',
     listingPath: '/bikes/bikes-list',
     path: 'bikes',
     data: navItemsBike,
@@ -118,6 +134,7 @@ export const navigationData: INavigationData[] = [
   {
     index: 2,
     name: 'Boats',
+    icon: 'sailing',
     listingPath: '/boats/boats-list',
     path: 'boats',
     data: navItemsBoat,
@@ -125,6 +142,7 @@ export const navigationData: INavigationData[] = [
   {
     index: 3,
     name: 'Trucks',
+    icon: 'local_shipping',
     listingPath: '/trucks/trucks-list',
     path: 'trucks',
     data: navItemsTrucks,

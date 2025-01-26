@@ -1,7 +1,7 @@
 .background-container {
   position: relative;
   width: 100%;
-  background-image: url("/logo4.png");
+  background-image: url("/backgroud.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -52,4 +52,10 @@ mat-form-field {
 mat-icon {
   margin-right: 10px;
   color: #757575;
+}
+
+.mat-mdc-raised-button:not(:disabled) {
+  background-color: #dc2626;
+  color: #faf9fd;
+  max-width: 200px;
 }

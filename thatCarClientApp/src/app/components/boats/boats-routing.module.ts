@@ -8,10 +8,10 @@ const routes: Routes = [
     path: '',
     component: BoatsComponent,
   },
-  {
-    path: 'boats-list/:params',
-    component: BoatsListComponent,
-  },
+  // {
+  //   path: 'boats-list/:params',
+  //   component: BoatsListComponent,
+  // },
   {
     path: 'boats-list',
     component: BoatsListComponent,

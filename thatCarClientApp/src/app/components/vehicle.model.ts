@@ -51,6 +51,7 @@ export class Vehicle {
   fuelType: FuelType;
   bodyType: BodyType;
   transmission: Transmission;
+  location: string;
 
   constructor(
     make: string,
@@ -64,7 +65,8 @@ export class Vehicle {
     newOrUsed: boolean,
     fuelType: FuelType,
     bodyType: BodyType,
-    transmission: Transmission
+    transmission: Transmission,
+    location: string
   ) {
     this.make = make;
     this.model = model;
@@ -78,6 +80,7 @@ export class Vehicle {
     this.fuelType = fuelType;
     this.bodyType = bodyType;
     this.transmission = transmission;
+    this.location = location;
   }
 }
 
@@ -99,7 +102,8 @@ export class Car extends Vehicle {
     bodyType: BodyType,
     numDoors: number,
     hasSunroof: boolean,
-    transmission: Transmission
+    transmission: Transmission,
+    location: string
   ) {
     super(
       make,
@@ -113,7 +117,8 @@ export class Car extends Vehicle {
       newOrUsed,
       fuelType,
       bodyType,
-      transmission
+      transmission,
+      location
     );
     this.numDoors = numDoors;
     this.hasSunroof = hasSunroof;
@@ -138,7 +143,8 @@ export class Bike extends Vehicle {
     bodyType: BodyType,
     hasSideCar: boolean,
     bikeType: string,
-    transmission: Transmission
+    transmission: Transmission,
+    location: string
   ) {
     super(
       make,
@@ -152,7 +158,8 @@ export class Bike extends Vehicle {
       newOrUsed,
       fuelType,
       bodyType,
-      transmission
+      transmission,
+      location
     );
     this.hasSideCar = hasSideCar;
     this.bikeType = bikeType;
@@ -177,7 +184,8 @@ export class Boat extends Vehicle {
     bodyType: BodyType,
     boatType: string,
     length: number,
-    transmission: Transmission
+    transmission: Transmission,
+    location: string
   ) {
     super(
       make,
@@ -191,7 +199,8 @@ export class Boat extends Vehicle {
       newOrUsed,
       fuelType,
       bodyType,
-      transmission
+      transmission,
+      location
     );
     this.boatType = boatType;
     this.length = length;
@@ -216,7 +225,8 @@ export class Truck extends Vehicle {
     bodyType: BodyType,
     truckType: string,
     cargoCapacity: number,
-    transmission: Transmission
+    transmission: Transmission,
+    location: string
   ) {
     super(
       make,
@@ -230,7 +240,8 @@ export class Truck extends Vehicle {
       newOrUsed,
       fuelType,
       bodyType,
-      transmission
+      transmission,
+      location
     );
     this.truckType = truckType;
     this.cargoCapacity = cargoCapacity;

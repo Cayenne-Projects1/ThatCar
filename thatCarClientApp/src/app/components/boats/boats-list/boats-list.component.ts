@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { testBoats } from '../../test_data';
 import { Boat } from '../../vehicle.model';
+import { filterItems } from '../../filterHelper';
 
 @Component({
   selector: 'app-boats-list',
@@ -16,6 +17,7 @@ export class BoatsListComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe((params) => {
+      this.boats = filterItems(testBoats, params);
       console.log('filters:', params);
     });
   }

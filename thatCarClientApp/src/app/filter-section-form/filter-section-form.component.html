@@ -1,15 +1,16 @@
 <div class="background-container">
   <div class="form-overlay">
     <div
-      style="display: inline-flex; margin-bottom: 10px"
+      style="display: inline-flex; margin-bottom: 10px; padding-left: 20px"
       *ngFor="let data of navigationData"
     >
-      <button mat-button (click)="changeNavigationData(data)">
+      <!-- <button mat-button (click)="changeNavigationData(data)">
         {{ data.name }}
-      </button>
+      </button> -->
+      <mat-icon>{{ data.icon }}</mat-icon>
     </div>
     <form [formGroup]="searchForm" (ngSubmit)="onSearch()">
-      <mat-form-field appearance="fill" class="full-width">
+      <!-- <mat-form-field appearance="fill" class="full-width">
         <mat-label>Search Make, Model and Variant</mat-label>
         <input
           matInput
@@ -17,19 +18,39 @@
           placeholder="e.g., Toyota Corolla"
           formControlName="searchQuery"
         />
-      </mat-form-field>
+      </mat-form-field> -->
 
-      <mat-radio-group formControlName="searchBy" class="radio-group">
+      <!-- <mat-radio-group formControlName="searchBy" class="radio-group">
         <mat-radio-button value="price">Price</mat-radio-button>
         <mat-radio-button value="monthlyRepayment"
           >Monthly Repayment</mat-radio-button
         >
-      </mat-radio-group>
+      </mat-radio-group> -->
+      <div class="filters">
+        <mat-form-field appearance="fill" class="half-width">
+          <mat-icon matPrefix>directions_car</mat-icon>
+          <mat-label>Car Make</mat-label>
+          <mat-select formControlName="make">
+            <mat-option *ngFor="let car of carMakes" [value]="car">
+              {{ car }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="half-width">
+          <mat-icon matPrefix>directions_car</mat-icon>
+          <mat-label>Car Model</mat-label>
+          <mat-select formControlName="model">
+            <mat-option *ngFor="let model of carModels" [value]="model">
+              {{ model }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
 
       <div class="filters">
         <!-- Min Price with left icon -->
         <mat-form-field appearance="fill" class="half-width">
-          <mat-icon matPrefix>attach_money</mat-icon>
+          <!-- <mat-icon matPrefix>attach_money</mat-icon> -->
           <mat-label>Min Price</mat-label>
           <mat-select formControlName="minPrice">
             <mat-option *ngFor="let price of priceOptions" [value]="price">
@@ -40,7 +61,7 @@
 
         <!-- Max Price with left icon -->
         <mat-form-field appearance="fill" class="half-width">
-          <mat-icon matPrefix>attach_money</mat-icon>
+          <!-- <mat-icon matPrefix>attach_money</mat-icon> -->
           <mat-label>Max Price</mat-label>
           <mat-select formControlName="maxPrice">
             <mat-option *ngFor="let price of priceOptions" [value]="price">
@@ -50,8 +71,18 @@
         </mat-form-field>
       </div>
       <div class="filters">
-        <!-- Location with left icon -->
         <mat-form-field appearance="fill" class="half-width">
+          <mat-label>Year Of Registration</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="e.g 2024"
+            formControlName="searchQuery"
+          />
+        </mat-form-field>
+
+        <!-- Location with left icon -->
+        <!-- <mat-form-field appearance="fill" class="half-width">
           <mat-icon matPrefix>place</mat-icon>
           <mat-label>Location</mat-label>
           <mat-select formControlName="location">
@@ -59,10 +90,10 @@
               {{ loc }}
             </mat-option>
           </mat-select>
-        </mat-form-field>
+        </mat-form-field> -->
 
         <!-- Body Type with left icon -->
-        <mat-form-field appearance="fill" class="half-width">
+        <!-- <mat-form-field appearance="fill" class="half-width">
           <mat-icon matPrefix>directions_car</mat-icon>
           <mat-label>Body Type</mat-label>
           <mat-select formControlName="bodyType">
@@ -70,6 +101,15 @@
               {{ body }}
             </mat-option>
           </mat-select>
+        </mat-form-field> -->
+        <mat-form-field appearance="fill" class="half-width">
+          <mat-label>Mileage in km's</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="Mileage in km's"
+            formControlName="searchQuery"
+          />
         </mat-form-field>
       </div>
 
